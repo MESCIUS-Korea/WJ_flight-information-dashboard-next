@@ -1,0 +1,144 @@
+/* 페이지 푸터 */
+
+footer * {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  list-style: none;
+  text-align: left;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #535c67;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+footer .container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 3rem 2rem 4rem;
+  overflow: hidden;
+}
+
+footer .container .company-info {
+  padding-left: 20px;
+}
+
+footer .container .company-info .img-wrap {
+  width: 300px;
+  margin-left: -20px;
+}
+
+footer .container .company-info .img-wrap img {
+  width: 100%;
+}
+
+footer .container .company-info p {
+  text-align: left;
+}
+
+footer .container .company-info .sns {
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+footer .container .company-info .sns li {
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  overflow: hidden;
+  float: left;
+  margin-right: 12px;
+}
+
+footer .container .company-info .sns li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 10px 17px 12px 10px;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: white; /* 원하는 색상으로 변경 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+footer .container .company-info .sns li a i {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+footer .container .company-info .sns li a:hover {
+  background-color: #ffffff;
+  color: #535c67;
+}
+
+footer .container .site-nav {
+  margin-left: 20px;
+}
+
+footer .container .site-nav .col li h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+footer .container .site-nav .col li ul li {
+  margin-bottom: 16px;
+  line-height: 24px;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+footer {
+  width: 100% !important;
+}
+
+@media (min-width: 480px) {
+  footer .container .site-nav {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  footer .container .site-nav .col {
+    width: calc(50% - 50px);
+  }
+}
+
+@media (min-width: 768px) {
+  footer .container .site-nav .col {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer .company-info {
+    width: 25%;
+    float: left;
+    margin-right: calc(5% - 40px);
+  }
+
+  footer .site-nav {
+    width: 65%;
+    float: right;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  footer {
+    width: 100% !important;
+  }
+}

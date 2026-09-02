@@ -1,0 +1,34 @@
+.olap-wrap {
+  max-width: 100%;
+  padding: 12px;
+  font-family: system-ui, sans-serif;
+}
+.olap-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.wj-pivotgrid {
+  /* height: 45%; */
+}
+
+g.wj-series-group rect:hover {
+  stroke: white;
+  stroke-width: 10px;
+  box-shadow: 5px 5px 5px;
+}
+
+g.wj-series-group rect:hover {
+  stroke-width: 0;
+}
+
+.wj-flexchart .wj-axis-x .wj-gridline,
+.wj-flexchart .wj-axis-y .wj-gridline {
+  opacity: 0.7;
+  stroke: #c5c5c5c2;
+  stroke-width: 1px;
+}
+
+.wj-flexchart .wj-label {
+  font-size: 0.8em;
+}

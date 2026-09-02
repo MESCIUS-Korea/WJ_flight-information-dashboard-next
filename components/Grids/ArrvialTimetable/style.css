@@ -1,0 +1,17 @@
+#manager-grid.wj-flexgrid .wj-cell {
+  padding: 6px;
+}
+
+#arrivalTimeGrid.wj-flexgrid .wj-cells .wj-cell.wj-state-selected {
+  background: none;
+  /* color: black; */
+}
+#arrivalTimeGrid .wj-header {
+  text-align: center;
+}
+
+.wj-cell.wj-header {
+  color: rgba(0, 0, 0, 0.72) !important;
+  background-color: rgba(242, 242, 242, 0.46);
+}
+

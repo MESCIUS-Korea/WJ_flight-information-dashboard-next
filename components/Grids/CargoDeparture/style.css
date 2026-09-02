@@ -1,0 +1,13 @@
+#cargoGrid {
+  width: 100%;
+}
+.wj-header,
+.image_cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image_cell {
+  height: 100%;
+}
+

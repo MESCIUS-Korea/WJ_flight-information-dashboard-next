@@ -1,0 +1,243 @@
+:root {
+  --blue: #2563eb;
+  --gray-light: #f1f5f9;
+  --gray-mid: #6b7280;
+  --gray-dark: #374151;
+  --white: #fff;
+  --border: #e5e7eb;
+}
+.it-wrap {
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  color: var(--gray-dark);
+}
+.it-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.flight-info .flight-no {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--blue);
+}
+.flight-info .flight-route {
+  margin-top: 4px;
+  font-size: 16px;
+}
+.flight-info .flight-time {
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--gray-mid);
+}
+.action-menu .icon-btn {
+  background: none;
+  border: none;
+  color: var(--gray-mid);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.it-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 1024px) {
+  .it-body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      'timeline weather'
+      'map rout';
+  }
+  .timeline {
+    grid-area: timeline;
+  }
+  .weather {
+    grid-area: weather;
+  }
+  .map-preview {
+    grid-area: map;
+  }
+  .route-detail {
+    grid-area: rout;
+  }
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* === 타임라인: 회색 베이스라인 + 파란 진행선 + 원형 마커 === */
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  position: relative;
+}
+/* 회색 베이스 라인 */
+.steps::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14px;
+  height: 2px;
+  background: #d1d5db;
+  z-index: 0;
+  border-radius: 999px;
+}
+/* 파란 진행 라인 (data-progress로 제어) */
+.steps::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  height: 2px;
+  background: #2563eb;
+  width: 0%;
+  z-index: 1;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+.steps[data-progress='1']::after {
+  width: 0%;
+}
+.steps[data-progress='2']::after {
+  width: 25%;
+}
+.steps[data-progress='3']::after {
+  width: 50%;
+}
+.steps[data-progress='4']::after {
+  width: 75%;
+}
+.steps[data-progress='5']::after {
+  width: 100%;
+}
+
+.steps li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  font-size: 12px;
+  color: #6b7280;
+  z-index: 2;
+  text-align: center;
+}
+/* 원형 마커 */
+.steps li::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #cbd5e1;
+  box-shadow: 0 0 0 2px #fff;
+}
+/* 완료 마커 파란색 */
+.steps li.done::after {
+  border-color: #2563eb;
+}
+/* 현재 스텝 강조 + 비행기 */
+.steps li.current::after {
+  border-color: #2563eb;
+  background: #fff;
+}
+.steps li svg {
+  display: none;
+}
+.steps li.current svg {
+  display: block;
+  position: absolute;
+  left: 51%;
+  top: -13px;
+  transform: translateX(-50%);
+  color: #2563eb;
+}
+.steps li span {
+  margin-top: 22px;
+}
+.steps li.done span,
+.steps li.current span {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* 지도 미리보기 */
+.map-placeholder {
+  background: var(--gray-light);
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-mid);
+  margin-bottom: 12px;
+}
+.ghost-btn,
+.primary-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.ghost-btn {
+  background: var(--white);
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+.primary-btn {
+  background: var(--blue);
+  color: var(--white);
+  width: 100%;
+}
+
+/* 날씨 */
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.weather-city {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  color: var(--gray-dark);
+}
+
+/* 상세 경로 */
+.route-steps p {
+  margin: 6px 0;
+  font-size: 14px;
+}

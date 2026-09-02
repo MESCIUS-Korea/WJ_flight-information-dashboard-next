@@ -1,0 +1,148 @@
+.page__container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.page__header {
+  display: flex;
+  padding: 0px;
+}
+/* 페이지 헤더 시작 */
+.page__container__header {
+  border-top: 15px solid black;
+  flex-shrink: 0;
+  height: 100px;
+  display: flex;
+  width: 100%;
+  z-index: 4;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+}
+
+.page__container__header {
+  border: none;
+  height: 50px;
+  background: #01c1d5;
+}
+
+.page__container__header .header__buttons,
+.page__container__header .header__links,
+.page__container__header .header__logo {
+  height: 50px;
+}
+.page__container__header .header__logo {
+  padding: 0;
+  width: unset;
+  /*   margin-left: 36px; */
+}
+.page__container__header .header__logo a {
+  line-height: 50px;
+}
+.page__container__header .header__logo img {
+  vertical-align: unset;
+}
+.page__container__header .header__logo .header__logo_brand img {
+  height: 50px;
+  width: 150px;
+}
+.page__container__header
+  .header__logo
+  .header__logo_brand
+  .header__logo_brand_mobile {
+  display: none;
+}
+.page__container__header .header__logo .header__logo_divide {
+  width: 1px;
+  display: inline-block;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-left: 7px;
+  margin-right: 13px;
+}
+.page__container__header .header__logo .header__logo_product img {
+  vertical-align: middle;
+  max-width: unset;
+}
+
+.page__container__header .header__links {
+  z-index: 3;
+}
+
+.header__links {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.page__container__header .header__links .link {
+  margin-left: 0;
+  padding: 0.5rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.page__container__header .header__links .site_hamburger-menu .link {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 0.5rem;
+}
+.header__links .link {
+  margin-left: 40px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.page__container__header .header__buttons a.button {
+  margin-left: 0;
+  margin: 0 0.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 0.5rem;
+  font-size: 13px;
+  font-weight: 500;
+}
+.header__logo {
+  height: 80px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: auto;
+  box-sizing: border-box;
+  transition: margin 0.3s ease-in-out;
+}
+.header__logo a {
+  display: block;
+  position: relative;
+  height: 100%;
+  line-height: 60px;
+}
+.header__logo img {
+  max-width: 200px;
+  max-height: 100%;
+  vertical-align: middle;
+}
+.header__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header__buttons a.button {
+  font-size: var(--body-font-size-small);
+  border: 1px solid #000;
+  padding: 10px 16px;
+  margin-left: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--body-color);
+}

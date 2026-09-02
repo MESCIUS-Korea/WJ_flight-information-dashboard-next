@@ -1,0 +1,20 @@
+[
+  {
+    "gate": "A12",
+    "terminal": "1",
+    "date": "2025-08-26",
+    "hour": "15",
+    "passengerCount": 320,
+    "flightNo": "KE123",
+    "airline": "대한항공"
+  },
+  {
+    "gate": "B04",
+    "terminal": "2",
+    "date": "2025-08-26",
+    "hour": "16",
+    "passengerCount": 280,
+    "flightNo": "OZ456",
+    "airline": "아시아나"
+  }
+]

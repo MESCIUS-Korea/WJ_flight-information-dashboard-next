@@ -1,0 +1,192 @@
+.cp-wrap {
+  --cp-bg: #ffffff;
+  --cp-text: #111827;
+  --cp-sub: #6b7280;
+  --cp-border: #e5e7eb;
+  --cp-primary: #2563eb;
+  --cp-primary-weak: #eff6ff;
+  background: var(--cp-bg);
+  color: var(--cp-text);
+  width: min(560px, 92vw);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+.cp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+  color: #fff;
+}
+.cp-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+.cp-title-icon {
+  color: #fff;
+}
+.cp-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.cp-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.cp-body {
+  padding: 16px;
+}
+.cp-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cp-border);
+}
+.cp-row:last-child {
+  border-bottom: none;
+}
+.cp-label {
+  color: var(--cp-sub);
+}
+.cp-value {
+  font-weight: 600;
+}
+.cp-arrow {
+  color: var(--cp-sub);
+  margin: 0 4px;
+}
+.cp-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--cp-sub);
+  background: var(--cp-primary-weak);
+  border: 1px dashed #bfdbfe;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.cp-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--cp-sub);
+  border: 1px dashed var(--cp-border);
+  border-radius: 10px;
+  background: #fafafa;
+}
+.cp-list {
+  margin-top: 8px;
+  border: 1px solid var(--cp-border);
+  border-radius: 10px;
+  padding: 10px;
+  background: #fbfbfc;
+}
+.cp-list-item {
+  padding: 6px 4px;
+  font-size: 14px;
+}
+.cp-map {
+  margin-top: 8px;
+  height: 240px;
+  border-radius: 10px;
+  border: 1px solid var(--cp-border);
+  background: repeating-linear-gradient(
+    45deg,
+    #f3f4f6,
+    #f3f4f6 10px,
+    #eef2ff 10px,
+    #eef2ff 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  font-weight: 600;
+}
+.cp-body--map {
+  padding: 8px 12px;
+  min-width: 900px;
+  min-height: 600px;
+}
+
+.cp-body--map .cp-map {
+  height: 500px;
+}
+/* 작은 화면에서 너무 커지지 않도록 보정 */
+@media (max-width: 640px) {
+  .cp-wrap--wide {
+    width: 96vw;
+  }
+  .cp-wrap--wide .cp-map {
+    height: 55vh;
+  }
+}
+
+/* ✅ 맵 팝업일 때만 더 크게 */
+.cp-wrap.map-mode {
+  width: min(80vw, 900px); /* 최대 1000px까지 확장 */
+}
+
+/* 헤더/푸터도 본문과 일관된 폭으로 맞춤 */
+.cp-wrap.map-mode .cp-header,
+.cp-wrap.map-mode .cp-footer {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* 맵 높이도 함께 확대 */
+.cp-wrap.map-mode .cp-map {
+  height: min(35vh, 500px);
+}
+
+.cp-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--cp-border);
+  background: #fcfcfd;
+}
+.cp-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.12s ease, background 0.2s ease;
+}
+.cp-btn:active {
+  transform: translateY(1px);
+}
+.cp-btn.primary {
+  background: var(--cp-primary);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+.cp-btn.primary:hover {
+  filter: brightness(1.05);
+}
+.cp-btn.ghost {
+  background: #fff;
+  color: var(--cp-text);
+  border: 1px solid var(--cp-border);
+}
+.cp-btn.ghost:hover {
+  background: #f8fafc;
+}
+
+.custom-popup {
+  border: none;
+  background: transparent;
+  width: auto; /* 내용의 width를 따르도록 */
+}
